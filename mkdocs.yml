@@ -1,6 +1,6 @@
 # Repository
-repo_name: cudy-docs
-repo_url: https://github.com/cudytech-pr/cudy-docs
+repo_name: testing
+repo_url: https://github.com/maggie202506/testing
 edit_uri: ""
 deploy:
   - provider: gh-pages
@@ -11,9 +11,8 @@ deploy:
 site_name: Cudy Docs
 site_description: Documentation for Cudy Products
 site_author: Cudy Docs
-site_url: https://cudytech-pr.github.io/cudy-docs/
+site_url: https://maggie202506.github.io/testing/
 site_dir: site
-copyright: © 2025, Shenzhen Cudy Technology Co., Ltd.
 
 docs_dir: docs
 
@@ -116,11 +115,18 @@ nav:
   - Home: index.md
   - User Guide:
     - Overview: user_guide/index.md
-    - WR3600: user_guide/wr3600/index.md
-    - GP1200: user_guide/gp1200/index.md
-    - GS1024E: user_guide/gs1024e/index.md
-    - C200P: user_guide/c200p/index.md
-    - IR04: user_guide/c200p/index.md
+    - WR3600:
+      - Combined Document: WR3600/combined.md
+    - WR6500:
+      - Combined Document: WR6500/combined.md
+    - GP1200: 
+      - Combined Document: GP1200/combined.md
+    - GP3000: 
+      - Combined Document: GP3000/combined.md      
+    - GS1024E: 
+      - Combined Document: GS1024E/combined.md
+    - GS1016E: 
+      - Combined Document: GS1016E/combined.md
   - FAQ:
     - FAQ: FAQ/index.md
   - Glossary: 
