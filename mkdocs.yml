@@ -1,0 +1,8 @@
+
+site_name: My Documentation
+site_url: https://maggie202506.github.io/testing/
+
+nav:
+  - Home: index.md
+  - Model A:
+    - Combined Document: modelA_combined.md
