@@ -1,8 +1,130 @@
+# Repository
+repo_name: cudy-docs
+repo_url: https://github.com/cudytech-pr/cudy-docs
+edit_uri: ""
+deploy:
+  - provider: gh-pages
+    repo: <cudytech-pr>/<cudy-docs>
+    branch: gh-pages  # 默认分支
 
-site_name: My Documentation
-site_url: https://maggie202506.github.io/testing/
+
+site_name: Cudy Docs
+site_description: Documentation for Cudy Products
+site_author: Cudy Docs
+site_url: https://cudytech-pr.github.io/cudy-docs/
+site_dir: site
+copyright: © 2025, Shenzhen Cudy Technology Co., Ltd.
+
+docs_dir: docs
+
+theme: 
+  name: material
+  logo: images/cudyicon.png
+  custom_dir: overrides
+  features:
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.top
+  # palette:
+  #   - scheme: default
+  #     primary: white
+  #     accent: indigo
+  #     toggle:
+  #       icon: material/toggle-switch-off-outline
+  #       name: Switch to dark mode
+  #   - scheme: slate
+  #     primary: cyan
+  #     accent: cyan
+  #     toggle:
+  #       icon: material/toggle-switch
+  #       name: Switch to light mode
+  favicon: images/favicon.ico
+
+# Plugins
+plugins:
+  - search
+  - include-markdown
+  - redirects:
+      redirect_maps:
+        'faq/vpn_cascading.md': 'faq/how_to_use_vpn.md'
+        'faq/how_to_set_up_esim.md': 'faq/how_to_use_routers.md'
+        'faq/tap_s2s_vs_tun.md': 'faq/how_to_enable_openvpn.md'
+        'faq/vpn_cascading.md': 'faq/how_to_use_vpn.md'
+        'setup_guide/firmware_upgrade.md': 'setup_guide/upgrade.md'
+
+# Customization
+extra:
+  # analytics:
+  #   provider: google
+  #   property: G-PEZ9H4DS1X
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://www.cudy.com
+    - icon: fontawesome/brands/github
+      link: https://github.com/cudytech-pr
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/cudytech/
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/cudytech
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UCi9XeBubGtEazL6KxO8In6w
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/cudytech
+  version:
+    provider: mike
+  alternate:
+    - name: English
+      link: /cudy/en/4/
+      lang: en
+    - name: Japanese
+      link: /cudy/jp/4/
+      lang: ja
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css
+  - https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css
+  - https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css
+
+  # we can use the cdn or files
+  # - stylesheets/photoswipe.min.css
+  # - stylesheets/default-skin.min.css
+  - stylesheets/extra.css
+  
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js
+  - https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js
+  # we can use the cdn or files
+  # - javascripts/photoswipe.min.js
+  # - javascripts/photoswipe-ui-default.min.js
+  - javascripts/analytics.js
+  - javascripts/extra.js
+  - javascripts/cookieconsent.js
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - toc:
+      permalink: true
+  - admonition
 
 nav:
   - Home: index.md
-  - Model A:
-    - Combined Document: modelA_combined.md
+  - User Guide:
+    - Overview: user_guide/index.md
+    - WR3600: user_guide/wr3600/index.md
+    - GP1200: user_guide/gp1200/index.md
+    - GS1024E: user_guide/gs1024e/index.md
+    - C200P: user_guide/c200p/index.md
+    - IR04: user_guide/c200p/index.md
+  - FAQ:
+    - FAQ: FAQ/index.md
+  - Glossary: 
+      - Overview: glossary/index.md
+      - Router: glossary/router.md
+      - Switch: glossary/switch.md
+      - Others: glossary/others.md
