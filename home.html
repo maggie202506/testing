@@ -1,0 +1,43 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Documentation</title>
+</head>
+<body>
+    <form id="doc-form">
+        <label for="model">Model:</label>
+        <select id="model" name="model">
+            <option value="modelA">Model A</option>
+            <option value="modelB">Model B</option>
+        </select><br><br>
+        <label for="modules">Modules:</label>
+        <select id="modules" name="modules" multiple>
+            <option value="module1">Module 1</option>
+            <option value="module2">Module 2</option>
+            <option value="module3">Module 3</option>
+        </select><br><br>
+        <button type="submit">Generate Documentation</button>
+    </form>
+    <div idresult=""></div>
+
+    <script>
+        document.getElementById('doc-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const model = document.getElementById('model').value;
+            const modules = Array.from(document.getElementById('modules').selectedOptions).map(option => option.value);
+
+            // 模拟后端生成文档
+            const combinedContent = modules.map(module => `# ${module}\n\nThis is the content of ${module}.`).join('\n\n');
+
+            // 显示结果
+            document.getElementById('result').innerHTML = combinedContent;
+
+            // 提示用户手动运行脚本
+            alert('Please run the script manually to generate the documentation.');
+        });
+    </script>
+</body>
+</html>
